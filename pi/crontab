@@ -1,0 +1,11 @@
+# m h  dom mon dow   command
+# once a day
+1 6 * * * curl "https://api.sunrise-sunset.org/json?lat=51.5&lng=0.1&date=today" > /home/pi/sunrise_sunset.json
+
+# once an hour
+# take_picture.sh
+1 * * * * /home/pi/take_picture.sh > /home/pi/take_picture_log.txt
+
+# a little later
+5 * * * * /usr/bin/python /home/pi/send_picture.py > /home/pi/send_picture_log.txt
+
